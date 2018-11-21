@@ -1,88 +1,10 @@
-class Book {
-  constructor(title, author, genre) {
-    this.title = title;
-    this.author = author;
-    this.genre = genre;
-    // probably add more data in the future...
-  }
+// ES6
+// This currently doesn't work with node 11 (at least the version I'm running)
+// To use this file structure, run node with the --experimental-modules flag
 
-  get returnData() {
-    return [this.title, this.author, this.genre];
-  }
-
-}
-
-class Bookshelf {
-  constructor(books) {
-    this.shelf = books || [];
-  }
-
-  addBook(book) {
-    this.shelf.push(book);
-  }
-
-  removeBook(book) {
-    let newShelf = this.shelf.filter(function(item) {
-      return item !== book;
-    })
-    this.shelf = newShelf;
-  }
-
-  swapBook(swapOutBook, swapInBook) {
-    this.removeBook(swapOutBook);
-    this.addBook(swapInBook);
-  }
-
-  moveToShelf(book, sourceShelf, targetShelf) {
-    targetShelf.addBook(book);
-  }
-
-  get displayShelf() {
-    return this.shelf;
-  }
-
-  get displayAuthors() {
-    let authors = [];
-    this.shelf.forEach(function(book) {
-      authors.push(book.author);
-    });
-    return authors;
-  }
-
-  get displayTitles() {
-    let titles = [];
-    this.shelf.forEach(function(book) {
-      titles.push(book.title);
-    });
-    return titles;
-  }
-
-  get displayGenres() {
-    let genres = [];
-    this.shelf.forEach(function(book) {
-      genres.push(book.genre);
-    });
-    return genres;
-  }
-}
-
-class Library {
-  constructor(bookshelves, libraryName) {
-    this.bookshelves = bookshelves;
-    this.libraryName = libraryName;
-  }
-
-  addShelf(shelf) {
-    this.bookshelves.push(shelf);
-  }
-
-  removeShelf(shelf) {
-    let newLibrary = this.bookshelves.filter(function(item) {
-      return item !== shelf;
-    })
-    this.bookshelves = newLibrary;
-  }
-}
+import { Book } from './book.js';
+import { Bookshelf } from './bookshelf.js';
+import { Library } from './library.js';
 
 // Function to link book data to ISBN
 function linkBookDataToISBN(book) {
