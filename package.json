@@ -1,0 +1,24 @@
+{
+  "name": "huxli-project",
+  "version": "1.0.0",
+  "description": "A library for storing book information.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d es5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmccall8829/Huxli-Project.git"
+  },
+  "author": "Tom McCall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tmccall8829/Huxli-Project/issues"
+  },
+  "homepage": "https://github.com/tmccall8829/Huxli-Project#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}
